@@ -43,7 +43,11 @@ class LaukiAgent(Agent):
         )
 
 
-server = AgentServer()
+from livekit.agents.job import JobExecutorType
+
+server = AgentServer(
+    job_executor_type=JobExecutorType.THREAD
+)
 
 
 @server.rtc_session()
